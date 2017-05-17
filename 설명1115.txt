@@ -1,0 +1,117 @@
+* 스프링 환경 설정
+Java Resource
+	src/main/java 클래스들
+	src/main/resources
+		mybatis mappers, 로그 관련 파일들
+		mybatis 설정파일
+	src/test/java
+		테스트 케이스 클래스
+	src/test/resources
+		테스트 관련 리소스
+src/main/webapp
+	Dynamic Web Project의 WebContent에 해당
+	WEB-INF 시스템 디렉토리
+		(외부에서 접근할 수 없음)
+	spring	스프링 설정 파일
+		root-context.xml
+			서블릿 이외의 설정
+		servlet-context.xml
+			서블릿 관련 설정
+				(View Resolver,리소스)
+			Controller, DAO, Service bean
+	web.xml 웹프로젝트의 배치기술서
+pom.xml 메이븐의 설정파일	
+	
+	
+spring02.war 파일을 
+C:\tomcat9\webapps 에 복사
+cmd
+	cd c:\tomcat9\bin
+	startup
+
+<스프링 설정>	
+1. pom.xml의 <properties> 이하 교체
+2. src/main/resources 파일 복사	
+3. servlet-context.xml 교체
+   스프링에서 관리하는 bean의 경로
+   <context:component-scan base-package="패키지이름">
+4. root-context.xml 교체
+	DBCP(DataBase Connection Pool) 설정   
+5. web.xml의 EncodingFilter 추가
+
+* 메이븐의 저장소
+http://mvnrepository.com
+
+
+
+* 기본게시판
+-패키지
+com.example.spring02.controller.board
+com.example.spring02.service.board
+com.example.spring02.model.board.dto
+com.example.spring02.model.board.dao
+
+글쓰기
+write.do => write.jsp
+insert.do =>  게시물 등록 => list.do(redirect)
+
+ 						컨트롤러
+../board/list.do => BoardController.java
+			      		서비스
+			      	BoardService.java 인터페이스
+			      	BoardServiceImpl.java 구현클래스
+			      		Model
+			      	BoardVO.java	데이터 저장소
+			      	BoardDAO.java	인터페이스
+			      	BoardDAOImpl.java	구현클래스
+			      	boardMapper.xml	   mybatis mapper
+			      		View
+			      	list.jsp
+* 조회수 증가 처리
+1번 게시물 열람 - 오전 10:36:10
+1번 게시물 열람 - 오전 10:36:11
+누가, 몇번 게시물을, 언제(시간)
+테이블, 쿠키, 세션
+
+세션에 저장 : 세션.setAttribute(key,value)
+세션에서 읽어오기 : 세션.getAttribute(key)
+
+session.setAttribute("update_time_1", "10:36:10");
+session.getAttribute("update_time_1");
+
+* 400 에러 : 파라미터 누락
+HTTP Status 400 - Required String parameter 'search_option' is not present
+
+* 로그인/로그아웃 처리
+com.example.spring02.controller
+com.example.spring02.service.member
+com.example.spring02.model.member.dto
+com.example.spring02.model.member.dao
+
+
+
+
+
+
+
+
+
+			      	
+			      	
+			      		
+
+
+
+	
+			
+	
+			
+			
+			
+			
+		
+		
+		
+		
+		
+				

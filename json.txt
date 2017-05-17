@@ -1,0 +1,43 @@
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 23 Nov 2016 02:23:48 GMT
+
+{"bno":1,"title":null,"content":"����....","writer":"kim","regdate":null,"viewcnt":0,"username":null,"cnt":0}
+        
+<bno>1</bno>
+<title>null</title>
+<content>����...</content>
+<writer>kim</writer>
+....
+
+
+{ "������":"��", "������":"��" } 1���� ������
+	json ��ü
+[ {},{},{}  ]   json ��ü �迭
+
+[{"bno":1,"title":null,"content":"����1","writer":"kim1","regdate":null,"viewcnt":0,"username":null,"cnt":0},{"bno":2,"title":null,"content":"����2","writer":"kim2","regdate":null,"viewcnt":0,"username":null,"cnt":0},{"bno":3,"title":null,"content":"����3","writer":"kim3","regdate":null,"viewcnt":0,"username":null,"cnt":0},{"bno":4,"title":null,"content":"����4","writer":"kim4","regdate":null,"viewcnt":0,"username":null,"cnt":0},{"bno":5,"title":null,"content":"����5","writer":"kim5","regdate":null,"viewcnt":0,"username":null,"cnt":0},{"bno":6,"title":null,"content":"����6","writer":"kim6","regdate":null,"viewcnt":0,"username":null,"cnt":0},{"bno":7,"title":null,"content":"����7","writer":"kim7","regdate":null,"viewcnt":0,"username":null,"cnt":0},{"bno":8,"title":null,"content":"����8","writer":"kim8","regdate":null,"viewcnt":0,"username":null,"cnt":0},{"bno":9,"title":null,"content":"����9","writer":"kim9","regdate":null,"viewcnt":0,"username":null,"cnt":0},{"bno":10,"title":null,"content":"����10","writer":"kim10","regdate":null,"viewcnt":0,"username":null,"cnt":0}]
+
+{ ����key: ���� ������    }
+
+{"1":      {"bno":1,"title":null
+ ,"content":"����1","writer":"kim1","regdate":null,"viewcnt":0,"username":null,"cnt":0} 
+
+}
+
+
+
+{"1":{"bno":1,"title":null,"content":"����1","writer":"kim1","regdate":null,"viewcnt":0,"username":null,"cnt":0},"2":{"bno":2,"title":null,"content":"����2","writer":"kim2","regdate":null,"viewcnt":0,"username":null,"cnt":0},"3":{"bno":3,"title":null,"content":"����3","writer":"kim3","regdate":null,"viewcnt":0,"username":null,"cnt":0},"4":{"bno":4,"title":null,"content":"����4","writer":"kim4","regdate":null,"viewcnt":0,"username":null,"cnt":0},"5":{"bno":5,"title":null,"content":"����5","writer":"kim5","regdate":null,"viewcnt":0,"username":null,"cnt":0}}
+
+
+
+
+
+
+
+
+
+
+
+
+

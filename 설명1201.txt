@@ -1,0 +1,8 @@
+* interceptor(인터셉터) - 요청을 가로채는 작업(전후)
+	매개변수 - HttpServletRequest, HttpServletResponse
+	용도 - 로그인 처리, pc웹/모바일웹 분기
+
+Filter(필터) - DispatcherServlet 이전에 실행
+AOP - around , 매개변수가 JoinPoint, ProceedingJoinPoint
+
+실행순서 : Filter > DispatcherServlet > Interceptor > AOP

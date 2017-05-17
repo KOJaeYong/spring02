@@ -1,0 +1,15 @@
+* mybatis mapper interface
+
+BoardDAO.java (인터페이스)
+BoardDAOImpl.java (구현클래스)
+boardMapper.xml (mapper)
+
+=> BoardDAO.java : SQL 포함
+
+* 한줄메모장
+com.example.spring02.controller.memo
+	MemoController.java
+com.example.spring02.model.memo.dao
+	MemoDAO.java(인터페이스)
+com.example.spring02.model.memo.dto
+	MemoVO.java

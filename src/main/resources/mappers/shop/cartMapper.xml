@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="cart">
+	<insert id="insert">
+		insert into cart 
+			(cart_id, userid, product_id, amount)
+		values 
+			(seq_cart.nextval,#{userid}
+			,#{product_id},#{amount} )	
+	</insert>
+<!-- 장바구니에 기존 상품이 있는지 확인	 -->
+ 	<select id="countCart" resultType="int">
+	select count(*) from cart
+	where userid=#{userid} and product_id=#{product_id}
+	</select>
+<!-- 장바구니 수정	 -->
+	<update id="update">
+		update cart
+		set amount=amount+#{amount}
+		where userid=#{userid} 
+			and product_id=#{product_id}
+	</update>
+	<update id="modify">
+		update cart
+		set amount=#{amount}
+		where userid=#{userid} 
+			and product_id=#{product_id}
+	</update>
+	
+<!-- 장바구니 삭제 -->
+	<delete id="delete">
+		delete from cart
+		where cart_id=#{cart_id}
+	</delete>	
+	
+	<select id="listCart"
+resultType="com.example.spring02.model.shop.dto.CartVO">
+ 	select cart_id, p.product_id, c.userid, username, product_name, amount
+		, price, (price * amount) money
+	from tbl_member m, cart c, product p
+	where m.userid=c.userid 
+		and c.product_id=p.product_id
+		and c.userid=#{userid}
+	order by cart_id 
+<!-- select p.product_id,product_name, price
+  , sum(amount) amount
+  , sum(price * amount) money
+from tbl_member m, cart c, product p
+where m.userid=c.userid and c.product_id=p.product_id
+  and c.userid=#{userid}
+group by p.product_id,product_name, price
+order by product_name	 -->
+	</select>
+	
+	<select id="sumMoney" resultType="int">
+	select nvl(sum(price * amount) ,0)
+	from cart c, product p
+	where c.product_id=p.product_id and userid=#{userid}	
+	</select>
+<!-- 상품별 장바구니 금액 -->	
+	<select id="cart_money"
+resultType="com.example.spring02.model.shop.dto.CartVO">
+		select product_name,  sum(price * amount) money
+		from cart c, product p
+		where c.product_id=p.product_id
+		group by product_name
+		order by product_name		
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

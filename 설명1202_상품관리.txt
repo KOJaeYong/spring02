@@ -1,0 +1,32 @@
+* 상품관리
+
+com.example.spring02.model.shop.dto
+com.example.spring02.model.shop.dao
+com.example.spring02.service.shop
+com.example.spring02.controller.shop
+
+* Controller와 RestController
+view가 아닌 데이터를 보낼 때
+	Controller : @ResponseBody
+	RestController : @ResponseBody 생략
+
+ @RequestBody : 클라이언트=>서버(json 데이터가 입력될 때)
+ @ResponseBody : 서버 => 클라이언트(json)	
+REST : REpresentational State Transfer
+  하나의 URI가 하나의 고유한 리소스를 대표하도록 
+  설계된 개념
+ http://localhost:8080/spring02/reply/list.do?bno=7
+ http://localhost:8080/spring02/reply/list.do?bno=1
+ http://localhost:8080/spring02/reply/list.do?bno=3
+ http://localhost:8080/spring02/reply/list.do?bno=9
+ 
+ http://localhost:8080/spring02/reply/list/1
+ http://localhost:8080/spring02/reply/list/7
+
+@RestController   // 스프링 4.0부터 지원
+
+@PathVariable : url에 포함된 변수
+@RequestParam : parameter에 포함된 변수
+
+
+
